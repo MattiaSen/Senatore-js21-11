@@ -24,14 +24,17 @@ let listaProdotti = [
 ]
 
 
-listaProdotti.sort((a, b) => a.nome.localeCompare(b.nome));
+function filtraProdottiPerPrezzo(lista, prezzoLimite) {
+    let prodottiFiltrati = [];
 
-
-listaProdotti.sort((a, b) => {
-    if (a.nome === b.nome) {
-        return a.prezzo - b.prezzo;
+    for (let i = 0; i < lista.length; i++) {
+        if (lista[i].prezzo > prezzoLimite) {
+            prodottiFiltrati.push(lista[i]);
+        }
     }
-    return 0;
-});
 
-console.log(listaProdotti);
+    return prodottiFiltrati;
+}
+
+let listaFiltrata = filtraProdottiPerPrezzo(listaProdotti, 250);
+console.log(listaFiltrata);
