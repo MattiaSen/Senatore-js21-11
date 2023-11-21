@@ -24,17 +24,5 @@ let listaProdotti = [
 ]
 
 
-function filtraProdottiPerPrezzo(lista, prezzoLimite) {
-    let prodottiFiltrati = [];
-
-    for (let i = 0; i < lista.length; i++) {
-        if (lista[i].prezzo > prezzoLimite) {
-            prodottiFiltrati.push(lista[i]);
-        }
-    }
-
-    return prodottiFiltrati;
-}
-
-let listaFiltrata = filtraProdottiPerPrezzo(listaProdotti, 250);
+let listaFiltrata = listaProdotti.filter(prodotto => prodotto.prezzo > 250);
 console.log(listaFiltrata);
